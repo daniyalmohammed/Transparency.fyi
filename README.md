@@ -1,4 +1,4 @@
-# Salary Transparency
+# WageVault: Safeguarding Salary Transparency through Blockchain Anonymization
 
 WageVault is a revolutionary app that leverages blockchain technology to create a secure and transparent platform for salary transparency. Powered by WorldCoin technology, it ensures that all users are verified real humans, eliminating the risk of fake accounts and fraudulent activities. By deploying our database on the blockchain using Filecoin and Web3.storage, we guarantee privacy, anonymity, and data integrity.
 
