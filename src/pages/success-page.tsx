@@ -1,41 +1,18 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import App from "../App";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-// Material Dashboard 2 React Context Provider
-import { MaterialUIControllerProvider } from "../context";
+import React, { useEffect } from 'react';
 
-// const container = document.getElementById("app");
-// const root = createRoot(container);
-
-function RedirectExample() {
+const RedirectExample = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
-      // 👇️ redirects to an external URL
-      window.location.replace('https://codefrontend.com');
+      window.location.replace('http://localhost:8080/');
     }, 3000);
 
     return () => clearTimeout(timeout);
   }, []);
-
-  return <>Will redirect in 3 seconds...</>;
-}
+};
 
 const SuccessPage = () => {
   RedirectExample();
-  return (  
-    <div>
-      {/* <App /> */}
-    </div>
-  //   <>
-  //     <BrowserRouter>
-  //   <MaterialUIControllerProvider>
-  //     <App />
-  //   </MaterialUIControllerProvider>
-  // </BrowserRouter>
-  //   </>
-  );
+  return <div className="verify-humanity">Verifying Humanity...</div>;
 };
 
 export default SuccessPage;

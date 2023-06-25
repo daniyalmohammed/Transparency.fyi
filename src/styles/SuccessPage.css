@@ -1,0 +1,10 @@
+.verify-humanity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
