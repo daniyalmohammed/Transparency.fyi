@@ -10,16 +10,9 @@ export default function Home() {
 
 	const onSuccess = (result: ISuccessResult) => {
 		console.log("User verification successful");
-		router.push('/success-page'); // Replace '/success-page' with the path to your success page component
-		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
+		router.push('/success-page');
 	}
 	
-
-	function does_nothing(): void {
-		//window.open("https://daniyalmoha.com/", "_blank");
-		console.log("testing 123");
-	  }
-
 	  const handleProof = async (result: ISuccessResult) => {
 		const reqBody = {
 		  merkle_root: result.merkle_root,

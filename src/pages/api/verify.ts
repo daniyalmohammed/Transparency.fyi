@@ -39,7 +39,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Reply>
 			uniqueid =  req.body.nullifier_hash;
 			// from here we open frontend and send uniqueID to textfile
 			fs.writeFileSync(filePath, uniqueid);
-			// CALL ON SUCCESS AND SWITCH THE VIEW
 		} else {
 			res.status(400).send({ code: wldResponse.code });
 			console.log("VERIFICATION FAILED");
