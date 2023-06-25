@@ -1,35 +1,13 @@
-# World ID Next.js Template
+# Salary Transparency
 
-This is a template repository for creating a new project using Next.js and the [World ID SDK](https://id.worldcoin.org). This template isn't intended for use cases that require on-chain verification, but rather for use cases that require off-chain web backend verification.
+WageVault is a revolutionary app that leverages blockchain technology to create a secure and transparent platform for salary transparency. Powered by WorldCoin technology, it ensures that all users are verified real humans, eliminating the risk of fake accounts and fraudulent activities. By deploying our database on the blockchain using Filecoin and Web3.storage, we guarantee privacy, anonymity, and data integrity.
 
-## Getting Started
+## Key Features
 
-First, run the development server:
+- **Real Human Verification:** Through WorldCoin technology, we authenticate all users as real humans, ensuring a trusted user base.
+- **Secure Blockchain Database:** Our app employs Filecoin and Web3.storage to store user data on the blockchain, providing unmatched security and data integrity.
+- **Privacy and Anonymity:** With our decentralized architecture, user information is encrypted and anonymized, safeguarding personal details and transactions.
+- **Seamless Transactions:** WorldCoin Wallet allows users to send and receive digital assets effortlessly, making financial transactions quick and convenient.
+- **Smart Contract Integration:** Smart contracts enable automated and trustless transactions, adding an extra layer of security and efficiency.
 
-```bash
-yarn install && yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-Copy `.env.example` to `.env.local` and add your World ID App ID and Action Name to the appropriate variables.
-
-This template includes an API route to verify the proof returned by the IDKit widget at `/api/verify`. Edit `src/pages/api/verify.ts` to handle any backend functions you need to perform.
-
-You can start editing the page by modifying `src/pages/index.tsx`. The page auto-updates as you edit the file. Edit the `onSuccess` function to define frontend behavior once the proof has been verified.
-
-The `src/pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js and World ID, take a look at the following resources:
-
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
--   [World ID Documentation](https://docs.worldcoin.org/) - learn about World ID features and API.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
