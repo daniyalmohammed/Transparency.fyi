@@ -1,37 +1,50 @@
 import { CredentialType, IDKitWidget } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
 import styles from "../styles/Home.module.css";
+import { useRouter } from 'next/router';
+
 
 export default function Home() {
+	
+	const router = useRouter();
+
 	const onSuccess = (result: ISuccessResult) => {
-
+		console.log("User verification successful");
+		router.push('/success-page'); // Replace '/success-page' with the path to your success page component
 		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
+	}
+	
 
-	};
+	function does_nothing(): void {
+		//window.open("https://daniyalmoha.com/", "_blank");
+		console.log("testing 123");
+	  }
 
-	const handleProof = async (result: ISuccessResult) => {
+	  const handleProof = async (result: ISuccessResult) => {
 		const reqBody = {
-			merkle_root: result.merkle_root,
-			nullifier_hash: result.nullifier_hash,
-			proof: result.proof,
-			credential_type: result.credential_type,
-			action: process.env.NEXT_PUBLIC_WLD_ACTION_NAME,
-			signal: "",
+		  merkle_root: result.merkle_root,
+		  nullifier_hash: result.nullifier_hash,
+		  proof: result.proof,
+		  credential_type: result.credential_type,
+		  action: process.env.NEXT_PUBLIC_WLD_ACTION_NAME,
+		  signal: "",
 		};
+	  
 		fetch("/api/verify", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(reqBody),
+		  method: "POST",
+		  headers: {
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(reqBody),
 		}).then(async (res: Response) => {
-			if (res.status == 200) {
-				console.log("Successfully verified credential.")
-			} else {
-				throw new Error("Error: " + (await res.json()).code) ?? "Unknown error.";
-			}
+		  if (res.status == 200) {
+			console.log("Successfully verified credential.");
+			onSuccess(result); // Call onSuccess function to switch the view
+		  } else {
+			throw new Error("Error: " + (await res.json()).code) ?? "Unknown error.";
+		  }
 		});
-	};
+	  };  
 
 	return (
 		<div className={styles.container}>
